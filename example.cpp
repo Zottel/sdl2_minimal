@@ -36,6 +36,9 @@ int main(int argc, char* argv[]) {
 		                  640, 480,
 		                  0),
 		 SDL_DestroyWindow);
+	if(window == nullptr) {
+		sdl_fail("SDL_CreateWindow failed");
+	}
 	
 	auto renderer = std::shared_ptr<SDL_Renderer>
 		(SDL_CreateRenderer(window.get(),
